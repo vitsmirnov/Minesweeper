@@ -14,22 +14,29 @@
 #include "minesweeper_winos.hpp"
 
 
+void ShowError(const char* msg);
+
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow)
 {
   try {
     MinesweeperGame Game;
     Game.Run();
   } catch (const std::exception& e) {
-    MessageBox(nullptr, e.what(), "Error!", MB_OK | MB_ICONERROR);
+    ShowError(e.what());
     return 1;
   } catch(const char* msg) {
-    MessageBox(nullptr, msg, "Error!", MB_OK | MB_ICONERROR);
+    ShowError(msg);
     return 2;
   } catch(...) {
-    MessageBox(nullptr, "Unknown error!", "Error!", MB_OK | MB_ICONERROR);
+    ShowError("Unknown error!");
     return 3;
   }
 
   return 0;
 }
 
+void ShowError(const char* msg)
+{
+  MessageBox(nullptr, msg, "Error!", MB_OK | MB_ICONERROR);
+}
