@@ -91,4 +91,5 @@ namespace vslib //vswin
     return result;
   }
 
+
 } // namespace vslib

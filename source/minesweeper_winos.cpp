@@ -239,8 +239,10 @@ void MinesweeperGame::UpdateScreen(HDC hdc)
   _main_window->SetCaption(GetGameStateInfo());
 }
 
-static void DrawFieldCell(const Cell& cell, HDC hdc, const RECT &rect,
-  int *mines_around, const CellColorSet& colors = CellColorSet{})
+static void DrawFieldCell(const Cell& cell, HDC hdc, const RECT& rect,
+  int* mines_around, const CellColorSet& colors = CellColorSet{})
+  // I guess mines_around shouldn't be a pointer
+  // After optimization mines_around will be right in Cell struct
 {
   switch (cell.status) {
     case Cell::Status::Closed:
@@ -278,12 +280,14 @@ void MinesweeperGame::DrawGameField(HDC hdc)
   const GameField& field = _engine.GetField();
   for (mgc::Point::FieldType i = 0; i < field.GetWidth(); ++i)
     for (mgc::Point::FieldType j = 0; j < field.GetHeight(); ++j) {
+      // Move it from here!
       RECT r = {
         i*_cell_size.width,
         j*_cell_size.height,
         i*_cell_size.width + _cell_size.width,
         j*_cell_size.height + _cell_size.height
       };
+      // After optimization mines_around will be right in Cell struct
       int ma = field(i, j).IsOpened() ? field.MinesAround({i, j}) : -1;
       DrawFieldCell(field(i, j), hdc, r, ma >= 0 ? &ma : nullptr, _color_set);
     }
@@ -467,6 +471,7 @@ void MinesweeperController::SetLevel(unsigned short lvl)
   if (lvl >= DefaultLevels.size())
     return;
   _engine->SetSettings(DefaultLevels[lvl]);
+  // Repeated code from MinesweeperController::ChangeGameFieldSize!
   _game->FitWindowSize();
   _game->Repaint();
   _game->MoveWindowToScreenCenter();//?
@@ -478,6 +483,7 @@ void MinesweeperController::ChangeGameFieldSize(mgc::Size::FieldType mgc::Size::
   mgc::Size s = _engine->GetFieldSize();
   s.*field += len;
   _engine->SetFieldSize(s, true);
+  // Repeated code from MinesweeperController::SetLevel!
   _game->FitWindowSize();
   _game->Repaint();
   _game->MoveWindowToScreenCenter();

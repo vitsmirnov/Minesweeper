@@ -1,5 +1,5 @@
-- Do refactoring for render
-- Do "mines around" optimization
+- Do refactoring for render!
+- Do "mines around" optimization.
 - Do table of records (best scores)?
 - Do loading skin (colors etc) from file?
 
