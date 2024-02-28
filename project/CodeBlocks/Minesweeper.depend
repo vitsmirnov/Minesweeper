@@ -1,0 +1,119 @@
+# depslib dependency file v1.0
+1703375507 source:c:\projects\codeblocks\minesweeper\source\minesweeperengine.cpp
+	"MinesweeperEngine.hpp"
+	<windows.h>
+
+1703375403 c:\projects\codeblocks\minesweeper\source\minesweeperengine.hpp
+	<windows.h>
+	<windowsx.h>
+	<stdio.h>
+	"vs_math.h"
+
+1694744712 c:\projects\codeblocks\vslib\source\vs_math.h
+
+1706010896 source:c:\projects\codeblocks\minesweeper\source\minesweeper.cpp
+	<windows.h>
+	<exception>
+	"minesweeper_winos.hpp"
+
+1705994690 source:c:\projects\codeblocks\minesweeper\source\minesweeper_core.cpp
+	"minesweeper_core.hpp"
+	<cstdlib>
+	<ctime>
+
+1706961928 c:\projects\codeblocks\minesweeper\source\minesweeper_core.hpp
+	<cstdlib>
+	<ctime>
+	<array>
+	<functional>
+	"vs_size.hpp"
+	"vs_point.hpp"
+	"vs_rect.hpp"
+	"vs_array2d.hpp"
+
+1703288765 c:\projects\codeblocks\minesweeper\source\size.hpp
+
+1703288853 c:\projects\codeblocks\minesweeper\source\point.hpp
+
+1703283621 c:\projects\codeblocks\minesweeper\source\array2d.hpp
+	<iostream>
+	"size.hpp"
+
+1706011660 c:\projects\codeblocks\minesweeper\source\vs_size.hpp
+
+1706012363 c:\projects\codeblocks\minesweeper\source\vs_point.hpp
+
+1706013801 c:\projects\codeblocks\minesweeper\source\vs_array2d.hpp
+	<iostream>
+	"vs_size.hpp"
+
+1706012735 c:\projects\codeblocks\minesweeper\source\vs_rect.hpp
+
+1706960498 source:c:\projects\codeblocks\minesweeper\source\minesweeper_winos.cpp
+	"minesweeper_winos.hpp"
+	<cstdio>
+	<windows.h>
+	<windowsx.h>
+	<utility>
+	<memory>
+	"vs_user_input.hpp"
+	"vs_win_keys.hpp"
+
+1707047026 c:\projects\codeblocks\minesweeper\source\minesweeper_winos.hpp
+	<windows.h>
+	<memory>
+	<map>
+	<functional>
+	<utility>
+	<stdexcept>
+	<exception>
+	"minesweeper_core.hpp"
+	"minesweeper_winos_colors.hpp"
+	"vs_win_window.hpp"
+	"vs_win_extra.hpp"
+	"vs_commands.hpp"
+	"vs_method_ptr.hpp"
+	"vs_user_input.hpp"
+
+1704324712 c:\projects\codeblocks\minesweeper\source\windows_extra.hpp
+	<windows.h>
+
+1704320001 source:c:\projects\codeblocks\minesweeper\source\windows_extra.cpp
+	"windows_extra.hpp"
+	<windows.h>
+
+1705496415 c:\projects\codeblocks\minesweeper\source\vs_commands.hpp
+	<functional>
+	<map>
+
+1706011907 c:\projects\codeblocks\minesweeper\source\vs_method_ptr.hpp
+
+1706012958 c:\projects\codeblocks\minesweeper\source\vs_user_input.hpp
+	<winuser.h>
+
+1706011045 source:c:\projects\codeblocks\minesweeper\source\vs_win_extra.cpp
+	"vs_win_extra.hpp"
+	<windows.h>
+
+1706010983 c:\projects\codeblocks\minesweeper\source\vs_win_extra.hpp
+	<windows.h>
+
+1706013368 source:c:\projects\codeblocks\minesweeper\source\vs_win_window.cpp
+	"vs_win_window.hpp"
+	<windows.h>
+	<string>
+
+1706013709 c:\projects\codeblocks\minesweeper\source\vs_win_window.hpp
+	<windows.h>
+	<functional>
+	<typeinfo>
+
+1706013132 c:\projects\codeblocks\minesweeper\source\vs_win_keys.hpp
+
+1706013038 c:\projects\codeblocks\minesweeper\source\vs_win_colors.hpp
+	<wingdi.h>
+
+1705937321 c:\projects\codeblocks\minesweeper\source\minesweeper_winos_colors.hpp
+	<windef.h>
+	"vs_win_colors.hpp"
+

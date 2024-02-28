@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Minesweeper" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="../../bin/Debug/Minesweeper" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../../obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++17" />
+					<Add option="-g" />
+					<Add option="-DDEBUG_MODE" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="../../bin/Release/Minesweeper" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../../obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++17" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++17" />
+			<Add option="-fexceptions" />
+			<Add directory="../../../VSLib/source" />
+		</Compiler>
+		<Linker>
+			<Add library="gdi32" />
+		</Linker>
+		<Unit filename="../../source/minesweeper.cpp" />
+		<Unit filename="../../source/minesweeper_core.cpp" />
+		<Unit filename="../../source/minesweeper_core.hpp" />
+		<Unit filename="../../source/minesweeper_winos.cpp" />
+		<Unit filename="../../source/minesweeper_winos.hpp" />
+		<Unit filename="../../source/minesweeper_winos_colors.hpp" />
+		<Unit filename="../../source/vs_array2d.hpp" />
+		<Unit filename="../../source/vs_commands.hpp" />
+		<Unit filename="../../source/vs_method_ptr.hpp" />
+		<Unit filename="../../source/vs_point.hpp" />
+		<Unit filename="../../source/vs_rect.hpp" />
+		<Unit filename="../../source/vs_size.hpp" />
+		<Unit filename="../../source/vs_user_input.hpp" />
+		<Unit filename="../../source/vs_win_colors.hpp" />
+		<Unit filename="../../source/vs_win_extra.cpp" />
+		<Unit filename="../../source/vs_win_extra.hpp" />
+		<Unit filename="../../source/vs_win_keys.hpp" />
+		<Unit filename="../../source/vs_win_window.cpp" />
+		<Unit filename="../../source/vs_win_window.hpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Release" />
+	<File name="..\..\source\vs_size.hpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="928" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_method_ptr.hpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1649" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_commands.hpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1353" topLine="39" />
+		</Cursor>
+		<Folding>
+			<Collapse line="46" />
+		</Folding>
+	</File>
+	<File name="..\..\source\minesweeper_core.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3725" topLine="124" />
+		</Cursor>
+		<Folding>
+			<Collapse line="21" />
+			<Collapse line="30" />
+			<Collapse line="93" />
+			<Collapse line="105" />
+		</Folding>
+	</File>
+	<File name="..\..\source\vs_win_extra.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="789" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_point.hpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="464" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_win_window.hpp" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1599" topLine="4" />
+		</Cursor>
+		<Folding>
+			<Collapse line="98" />
+			<Collapse line="105" />
+			<Collapse line="110" />
+			<Collapse line="130" />
+			<Collapse line="150" />
+			<Collapse line="178" />
+			<Collapse line="273" />
+		</Folding>
+	</File>
+	<File name="..\..\source\vs_win_window.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1223" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_array2d.hpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1765" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_rect.hpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="858" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_win_extra.hpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\minesweeper.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="675" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\minesweeper_winos.hpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8048" topLine="208" />
+		</Cursor>
+		<Folding>
+			<Collapse line="101" />
+		</Folding>
+	</File>
+	<File name="..\..\source\minesweeper_winos_colors.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="314" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_win_colors.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="225" topLine="1" />
+		</Cursor>
+		<Folding>
+			<Collapse line="25" />
+		</Folding>
+	</File>
+	<File name="..\..\source\minesweeper_core.hpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="677" topLine="23" />
+		</Cursor>
+		<Folding>
+			<Collapse line="111" />
+			<Collapse line="142" />
+			<Collapse line="237" />
+			<Collapse line="241" />
+		</Folding>
+	</File>
+	<File name="..\..\source\minesweeper_winos.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11873" topLine="243" />
+		</Cursor>
+		<Folding>
+			<Collapse line="40" />
+			<Collapse line="64" />
+			<Collapse line="131" />
+			<Collapse line="152" />
+			<Collapse line="207" />
+			<Collapse line="257" />
+			<Collapse line="295" />
+			<Collapse line="328" />
+			<Collapse line="440" />
+		</Folding>
+	</File>
+	<File name="..\..\source\vs_win_keys.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="250" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\source\vs_user_input.hpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4224" topLine="2" />
+		</Cursor>
+		<Folding>
+			<Collapse line="129" />
+			<Collapse line="146" />
+			<Collapse line="167" />
+		</Folding>
+	</File>
+</CodeBlocks_layout_file>
