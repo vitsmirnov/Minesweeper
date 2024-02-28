@@ -10,8 +10,6 @@
 #include <ctime>
 //#include <random>
 
-//#include "vs_math.h"
-
 
 namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
 {
@@ -55,7 +53,7 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
 
   void GameEngine::NewGame()
   {
-    // Don't do check for (state == GameState::IsReady)! It's bad idea.
+    // Don't do check for (_state == GameState::IsReady)! It's bad idea.
     //if (_state == GameState::IsReady) //? It's bad!
       //return;
     _field.Fill({false, Cell::Status::Closed});
@@ -91,11 +89,12 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
       return max;
   }
 
-  /*template<typename _Type>
+  // It is't used
+  template<typename _Type>
   _Type FitValue(_Type value, _Type max)
   {
     return FitValue(value, (_Type)0, max);
-  }//*/
+  }
 
   // It always returns true. It isn't smart.
   bool GameEngine::SetMinesCount(Quantity value, bool start_new_game)
@@ -103,13 +102,6 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
     if (_mines_count == value)
       return true;
 
-    /*auto max_mines = GetMaxMinesCount();
-    if (value >= MinMinesCount && value <= max_mines)
-      _mines_count = value;
-    else if (value < MinMinesCount)
-      _mines_count = MinMinesCount;
-    else // value > GetMaxMinesCount()
-      _mines_count = max_mines;//*/
     _mines_count = FitValue(value, MinMinesCount, GetMaxMinesCount());
 
     if (start_new_game)
@@ -168,7 +160,8 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
     if (!IsGameRunning() || !IsPosValid(pos) || !_field[pos].IsOpened())// || _field[pos].has_mine) // Check for has_mine is doubtful
       return;
     int closed{0}, mines{0}, marked{0};
-    auto l = [&](const Point& p) { // default capture [&] is safe here. The lambda is used only once.
+    auto l = [&](const Point& p) {
+      // default capture [&] is safe here. The lambda is used only once.
       if (_field[p].IsClosed()) ++closed;
       if (_field[p].has_mine) ++mines;
       if (_field[p].IsMineMarked()) ++marked;

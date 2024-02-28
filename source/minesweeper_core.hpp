@@ -50,6 +50,10 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
   public:
     bool has_mine{false};
     Status status{Status::Closed};
+    // To do:
+    // Now this is a calculated parameter
+    // It works fine, but it isn't effective/optimal implementation
+    // We can optimize it via this field:
     //signed char mines_around{-1}; // -1 means that number isn't valid
   public:
     // It's useless I guess..
@@ -58,7 +62,7 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
     void operator()(bool _has_mine, Status _status)
       {Setup(_has_mine, _status);}
 
-    bool Open() { // "bool" probably isn't a good idea.
+    bool Open() { // "bool" probably isn't a good idea. Change to void?
       if (status == Status::Closed)
         status = Status::Opened;
       return status == Status::Opened;
@@ -220,8 +224,8 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
     const Size& GetFieldSize() const {return _field.GetSize();}
     Quantity GetMinesCount() const {return _mines_count;}
 
-    bool OpenCell(const Point &pos);//void?
-    bool MineMarkCell(const Point &pos);//void? //rename to MineMarkOrClose?
+    bool OpenCell(const Point &pos); // Change bool to void?
+    bool MineMarkCell(const Point &pos); // Change bool to void? //rename to MineMarkOrClose?
     void OpenSurroundingCells(const Point &pos);
 
     GameState GetGameState() const {return _state;}
@@ -247,6 +251,7 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
   protected:
     bool PutMines(const Point& start_pos);
     Point PosToPoint(Quantity pos) const //????
+      // This should be checked (so as an implementation of array2d).
       //{return {(Coord)(pos % GetFieldSize().width), (Coord)(pos / GetFieldSize().width)};}
       {return {(Coord)(pos / GetFieldSize().height), (Coord)(pos % GetFieldSize().height)};}
     Quantity GetMaxMinesCount() const {return GetFieldSize().Area() - MinFreeCells;}
