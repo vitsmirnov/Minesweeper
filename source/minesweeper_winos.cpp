@@ -361,11 +361,10 @@ void MinesweeperController::SetPlayerCommands()
 void MinesweeperController::HandleUserInput(UINT msg, WPARAM wParam, LPARAM lParam)
 {
   UserInput input{WinMsgToEvent(msg), 0, 0};
-  //static char data_buffer[128 / sizeof(char)]; // This is doubtful.
   using MouseData = std::pair<mgc::Point, short>; // mouse pos and mouse wheel shift
   constexpr unsigned int MaxDataSize = sizeof(MouseData);
   char data_buffer[MaxDataSize / sizeof(char)];
-  void* data{nullptr}; //std::unique_ptr<void> data{nullptr};
+  void* data{nullptr};
 
   switch (input.event) {
     // Keys messages:
@@ -380,7 +379,8 @@ void MinesweeperController::HandleUserInput(UINT msg, WPARAM wParam, LPARAM lPar
     case UserInputEvent::MouseDblClick:
       input.key = WinMsgToMouseButton(msg);
     case UserInputEvent::MouseWheel:
-      //wheel_shift = GET_WHEEL_DELTA_WPARAM(wParam) / WHEEL_DELTA; // It isn't needed for MouseKeyUp/Down/DblClick
+      // It isn't needed for MouseKeyUp/Down/DblClick, so
+      // we will get mouse wheel shift later
     case UserInputEvent::MouseMove: {
       input.keys_state = KeysState(GET_KEYSTATE_WPARAM(wParam));
       mgc::Point mouse_pos{GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam)};
@@ -398,44 +398,6 @@ void MinesweeperController::HandleUserInput(UINT msg, WPARAM wParam, LPARAM lPar
   printf("HandleInput(event, key, state): %i %i %i\n", (int)input.event, input.key, input.keys_state);
 #endif // DEBUG_MODE
 }
-
-/*void MinesweeperController::HandleUserInput(UINT msg, WPARAM wParam, LPARAM lParam)
-{
-  UserInput input{WinMsgToEvent(msg), 0, 0};
-
-  switch (input.event) {
-    // Keys messages:
-    case UserInputEvent::KeyDown:
-    case UserInputEvent::KeyUp:
-    case UserInputEvent::KeyPress:
-      input.key = (KeyCode)wParam;
-      DoPlayerCommand(input, nullptr);
-      break;//return;
-    // Mouse messages:
-    case UserInputEvent::MouseDown:
-    case UserInputEvent::MouseUp:
-    case UserInputEvent::MouseDblClick:
-      input.key = WinMsgToMouseButton(msg);
-    case UserInputEvent::MouseWheel:
-      //wheel_shift = GET_WHEEL_DELTA_WPARAM(wParam) / WHEEL_DELTA; // It isn't needed for MouseKeyUp/Down/DblClick
-    case UserInputEvent::MouseMove: {
-      input.keys_state = KeysState(GET_KEYSTATE_WPARAM(wParam));
-      mgc::Point mouse_pos{GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam)};
-
-      if (input.event == UserInputEvent::MouseWheel) {
-        auto data = std::make_pair(
-          mouse_pos, (short)(GET_WHEEL_DELTA_WPARAM(wParam) / WHEEL_DELTA));
-        DoPlayerCommand(input, &data);
-      } else {
-        DoPlayerCommand(input, &mouse_pos);
-      }
-    }
-  }
-#ifdef DEBUG_MODE
-  printf("HandleInput(event, key, state): %i %i %i\n", (int)input.event, input.key, input.keys_state);
-#endif // DEBUG_MODE
-}
-//*/
 
 LRESULT MinesweeperController::WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
