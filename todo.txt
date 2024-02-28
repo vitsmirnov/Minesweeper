@@ -1,6 +1,11 @@
-- Do refactoring for render!
-- Do "mines around" optimization.
-- Do table of records (best scores)?
-- Do loading skin (colors etc) from file?
+Bugs/problems:
+ - Do refactoring for render! It's a mess!
+ - Check the Array2d (for cols/rows).
+ - Do "mines around" optimization (include mines_around in Cell struct).
+ - Do refactoring for vs_commands.
+ - Move vs_* file to separate lib?
 
-- Move vs_* file to separate lib?
+Features:
+ - Do table of records (best scores)?
+ - Do loading skin (colors etc) from file?
+ - Do an UI (buttons, timers etc on window)?

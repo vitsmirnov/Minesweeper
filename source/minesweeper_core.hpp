@@ -84,6 +84,7 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
   /// GameField ///
 
   // The version of GameField class with composition (instead of inheritance)
+  // The version with inheritance instead of composition is moved in _draft.cpp (or just deleted)
   class GameField {
   public:
     static constexpr Size DefaultFieldSize{9, 9};
@@ -142,55 +143,6 @@ namespace minesweeper_game_core // (Core | Engine) MSGE | MGE
   private:
     vslib::Array2d<Cell, Coord> _cells{DefaultFieldSize, DefaultCell};
   };
-
-
-  /*// The version with inheritance instead of composition
-  class GameField: public vslib::Array2d<FieldCell, Coord> {
-  public:
-    using ParentClass = vslib::Array2d<FieldCell, Coord>;
-  public:
-    static constexpr Size DefaultFieldSize{9, 9};//{10, 10};
-    static constexpr Size MinFieldSize{4, 4};
-    static constexpr Size MaxFieldSize{1000, 1000};
-    static constexpr FieldCell DefaultCell{false, Cell::Status::Closed};
-  public:
-    explicit GameField(const Size& size = DefaultFieldSize, FieldCell cell = DefaultCell):
-      ParentClass::Array2d{ValidatedSize(size), cell} {}
-
-    bool Setup(const Size& size, FieldCell cell = DefaultCell)
-      {return ParentClass::Setup(ValidatedSize(size), cell);}
-
-    bool SetSize(const Size& new_size)
-      {return ParentClass::SetSize(ValidatedSize(new_size));}
-    bool SetSizeIfPossible(const Size& new_size)
-      {return IsSizeValid(new_size) && ParentClass::SetSize(new_size);}
-
-    static Size ValidatedSize(Size size)
-      {return size.FitInto(MinFieldSize, MaxFieldSize);}
-    static bool IsSizeValid(const Size& value) {
-      return
-        value.width >= MinFieldSize.width && value.height >= MinFieldSize.height &&
-        value.width <= MaxFieldSize.width && value.height <= MaxFieldSize.height;
-    }
-
-    using ParentClass::operator[];
-    FieldCell& operator[](const Point& pos) //operator()
-      {return ParentClass::operator()(pos.x, pos.y);}
-    const FieldCell& operator[](const Point& pos) const //operator()
-      {return ParentClass::operator()(pos.x, pos.y);}
-
-    template <typename _TypeName>
-    int CountAround(Coord x, Coord y,
-      _TypeName FieldCell::*field, _TypeName value) const; // inline?
-    int MinesAround(Coord x, Coord y) const
-      {return CountAround(x, y, &FieldCell::has_mine, true);}//<bool>
-    int MineMarkedAround(Coord x, Coord y) const
-      {return CountAround(x, y, &FieldCell::status, Cell::Status::MineMarked);}//<CellStatus>
-
-    inline Rect GetRoundRect(Coord x, Coord y) const;
-    Rect GetRoundRect(const Point& p) const
-      {return GetRoundRect(p.x, p.y);}
-  };//*/
 
 
   /// GameEngine ///

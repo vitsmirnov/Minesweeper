@@ -5,7 +5,6 @@
 //#include <type_traits>
 //#include <typeinfo>
 
-
 #ifdef COMMANDS_INCLUDE_DEFAULT
 #include <functional>
 #include <map>
@@ -86,7 +85,10 @@ namespace vslib
 #endif // COMMANDS_INCLUDE_DEFAULT
 
 
-  /*template<typename _KeyType, typename _ValueType>
+  /*
+  // An interface which template class Commands probably should use
+
+  template<typename _KeyType, typename _ValueType>
   class IDictionary {
   public:
     virtual ~IDictionary() {}

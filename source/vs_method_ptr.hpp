@@ -11,6 +11,7 @@
 namespace vslib
 {
 
+
   template<typename ...>
   class Method;  // Rename to MethodPtr?
 
@@ -51,6 +52,7 @@ namespace vslib
   {
     return std::function<_ResType (_ArgTypes ...)>{MakeMethod(owner, method)};
   }
+
 
 } // namespace vslib
 

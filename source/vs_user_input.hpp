@@ -126,69 +126,7 @@ namespace vslib
   }
 
 
-
-  /* // The first version
-  // Info:
-  //InputEventCode: XX (-type) XXXX (-key code) XXXX (-shift state)
-  // XX_XXXX_XXXX
-
-  // Main info:
-  //  event
-  //  key code
-  //  shift state
-  // Extra info:
-  //  mouse pos
-  //  mouse wheel shift
-
-  //uns int (4) 4_294_967_296
-  //uns long long (8) 18_446_744_073_709_552_000 = 1.8446744e+19
-  //*/
-
-  /*//using InputEventCode = unsigned long long;
-
-  //using KeysState = WPARAM;
-
-  inline InputEventCode EventToCode(UserInputEvent event, KeyCode key, ShiftState shift = 0)
-  {
-    // InputEventCode: XX (-type) XXXX (-key code) XXXX (-shift state)
-    // XX_XXXX_XXXX
-
-    //InputEventCode result = event * 100000000;
-    //result += key * 10000;
-    //result = result | shift;
-    //return result;
-
-    return ((event * 100000000) + (key * 10000)) | shift;
-  }//*/
-
-
 }
-
-
-/*enum UserInputType: char {uiKeyDown, uiKeyUp, uiMouseDown, uiMouseUp, uiMouseMove, uiMouseDblClick};//uiMouseWheel(Up/Down), uiKeyPress
-
-struct UserInput {
-public:
-  UserInputType Type;
-  union {
-    short KeyCode; //unsigned char
-    POINTS MousePos;
-    //ShiftState??
-  }
-};
-
-key code
-shift state
-mouse pos
-mouse wheel shift
-
-InputEventCode: XX (-type) XXXX (-key code)
-
-int (4) 4_294_967_296
-long (8) 18_446_744_073_709_552_000
-1.8446744e+19
-
-//*/
 
 
 #endif // VS_USER_INPUT_H_INCLUDED
