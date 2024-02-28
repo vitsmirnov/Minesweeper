@@ -113,6 +113,7 @@ namespace vslib //vswin
       SetWindowPos(_hwnd, HWND_TOP, 0, 0, width + s.cx, height + s.cy,
         SWP_NOMOVE | SWP_NOZORDER);// | SWP_FRAMECHANGED
     }
+    // To do:
     //void SetLeft()
     //void SetTop()
     //void SetWidth()
@@ -127,101 +128,6 @@ namespace vslib //vswin
     virtual LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
       {return DefWindowProc(_hwnd, uMsg, wParam, lParam);}
     static LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-  protected: // Deprecated
-    /*bool Create(
-      LPCSTR caption = "",//ClassName(),
-      int x = CW_USEDEFAULT,
-      int y = CW_USEDEFAULT,
-      int width = CW_USEDEFAULT,
-      int height = CW_USEDEFAULT,
-      DWORD style = WS_OVERLAPPEDWINDOW,// | WS_VISIBLE,
-      DWORD ex_style = 0,
-      HWND wnd_parent = nullptr,//0,
-      HMENU menu = nullptr//0
-    )
-    {
-      if (!RegisterWindowClass())
-        return false;//?!
-
-      _hwnd = CreateWindowEx(ex_style, ClassName(), caption, style, x, y,
-        width, height, wnd_parent, menu, GetModuleHandle(nullptr), this);
-
-      return _hwnd != nullptr;
-    }//*/
-    /*bool RegisterWindowClass(//HINSTANCE hThisInstance
-      HBRUSH bg_color = (HBRUSH)COLOR_WINDOW, // Default color ?
-      UINT style = CS_DBLCLKS | CS_HREDRAW | CS_VREDRAW, // Catch double-clicks
-      HCURSOR cursor = LoadCursor(nullptr, IDC_ARROW), // Default cursor
-      HICON icon = LoadIcon(nullptr, IDI_APPLICATION), // Default icon
-      HICON small_icon = LoadIcon(nullptr, IDI_APPLICATION), // Default small icon
-      LPCSTR menu_name = nullptr, // No menu
-      int cls_extra = 0, // No extra bytes after the window class
-      int wnd_extra = 0) // structure or the window instance
-    {
-      WNDCLASSEX wincl{0}; // Data structure for the window class
-      wincl.cbSize = sizeof(wincl);
-      wincl.hInstance = GetModuleHandle(nullptr);//hThisInstance;
-      wincl.lpszClassName = ClassName();
-      wincl.lpfnWndProc = _DerivedType::WindowProc;// This function is called by windows
-
-      wincl.hbrBackground = bg_color;//(HBRUSH)COLOR_WINDOW;//BACKGROUND; // Use Windows's default colour as the background of the window
-      wincl.style = style;// | CS_OWNDC;
-      wincl.hCursor = cursor;
-      wincl.hIcon = icon;
-      wincl.hIconSm = small_icon;
-      wincl.lpszMenuName = menu_name;
-      wincl.cbClsExtra = cls_extra;
-      wincl.cbWndExtra = wnd_extra;
-
-      // Register the window class, and if it fails quit the program
-      return RegisterClassEx(&wincl) != 0;
-    }//*/
-    /*bool Create2(
-      // For RegisterClassEx
-      HBRUSH bg_color = (HBRUSH)COLOR_WINDOW, // Default color ?
-      UINT class_style = CS_DBLCLKS | CS_HREDRAW | CS_VREDRAW, // Catch double-clicks
-      HCURSOR cursor = LoadCursor(nullptr, IDC_ARROW), // Default cursor
-      HICON icon = LoadIcon(nullptr, IDI_APPLICATION), // Default icon
-      HICON small_icon = LoadIcon(nullptr, IDI_APPLICATION), // Default small icon
-      LPCSTR menu_name = nullptr, // No menu
-      int cls_extra = 0, // No extra bytes after the window class
-      int wnd_extra = 0, // structure or the window instance
-      // For CreateWindowEx
-      LPCSTR caption = "",//ClassName(),
-      int x = CW_USEDEFAULT,
-      int y = CW_USEDEFAULT,
-      int width = CW_USEDEFAULT,
-      int height = CW_USEDEFAULT,
-      DWORD wnd_style = WS_OVERLAPPEDWINDOW | WS_VISIBLE,
-      DWORD wnd_exstyle = 0,
-      HWND wnd_parent = nullptr,//0,
-      HMENU menu = nullptr)//0
-    {
-      std::string class_name{ClassName() + std::to_string(counter)};
-      WNDCLASSEX wincl{0}; // Data structure for the window class
-
-      wincl.cbSize = sizeof(wincl);
-      wincl.hInstance = GetModuleHandle(nullptr);//hThisInstance;
-      wincl.lpszClassName = class_name.data();
-      wincl.lpfnWndProc = WindowProc; // This function is called by windows
-
-      wincl.hbrBackground = bg_color;//(HBRUSH)COLOR_WINDOW;//BACKGROUND; // Use Windows's default colour as the background of the window
-      wincl.style = class_style;// | CS_OWNDC;
-      wincl.hCursor = cursor;
-      wincl.hIcon = icon;
-      wincl.hIconSm = small_icon;
-      wincl.lpszMenuName = menu_name;
-      wincl.cbClsExtra = cls_extra;
-      wincl.cbWndExtra = wnd_extra;
-
-      if (RegisterClassEx(&wincl) == 0) //ATOM
-        return false;//?!
-
-      _hwnd = CreateWindowEx(wnd_exstyle, class_name.data(), caption, wnd_style,
-        x, y, width, height, wnd_parent, menu, wincl.hInstance, this);
-
-      return _hwnd != nullptr;
-    }//*/
   private:
     HWND _hwnd{nullptr};
   private:
@@ -266,39 +172,6 @@ namespace vslib //vswin
       //{return DefWindowProc(hwnd, msg, w_param, l_param);}
   };//*/
 
-
-
-  /// temp ///
-
-
-  /*LRESULT ???::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
-  {
-    printf("MainWindow::HandleMessage: msg = %i\n", uMsg);
-
-    switch (uMsg) {
-      case WM_DESTROY:
-        PostQuitMessage(0);
-        return 0;
-
-      case WM_PAINT: {
-        PAINTSTRUCT ps;
-        HDC hdc = BeginPaint(Window(), &ps);//_hwnd
-
-        //FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW+1));
-
-        EndPaint(Window(), &ps);//_hwnd
-      } return 0;
-
-      default:
-        return DefWindowProc(Window(), uMsg, wParam, lParam);//m_hwnd
-    }
-    return true;//??
-  }//*/
-
-
-  //DWORD wnd_style = WS_VISIBLE | WS_SYSMENU | WS_MINIMIZEBOX
-  //DWORD wnd_style = WS_VISIBLE | WS_OVERLAPPED | WS_BORDER | WS_SYSMENU
-  //DWORD wnd_style = WS_VISIBLE | WS_OVERLAPPEDWINDOW | !WS_THICKFRAME //| WS_OVERLAPPED //| WS_BORDER// | WS_SYSMENU
 
 } // namespace vslib
 

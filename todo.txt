@@ -2,3 +2,5 @@
 - Do "mines around" optimization
 - Do table of records (best scores)?
 - Do loading skin (colors etc) from file?
+
+- Move vs_* file to separate lib?
