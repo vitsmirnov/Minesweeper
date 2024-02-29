@@ -1,4 +1,4 @@
-Bugs/problems:
+Refactoring/bugs:
  - Do refactoring for render! It's a mess!
  - Check the Array2d (for cols/rows).
  - Do "mines around" optimization (include mines_around in Cell struct).
